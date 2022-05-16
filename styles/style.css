@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    rgb(91, 91, 255),
+    rgb(255, 104, 104)
+  );
+}
+
+.button-container {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-location-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: 25rem;
+  background-color: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.125rem;
+}
+
+.find-location-button:hover {
+  background-color: rgb(52, 52, 52);
+}
