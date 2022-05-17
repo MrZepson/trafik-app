@@ -13,10 +13,14 @@
         Hitta hållplatser nära mig!
       </button>
     </section>
-    <main>
-      <ul id="location-list"></ul>
-      <ul id="departure-times"></ul>
+    <main class="location-container">
+      <ul id="location-list" class="location-list"></ul>
     </main>
+    <section id="times-overlay" class="times-overlay">
+      <div class="module-content">
+        <ul id="departure-times" class="departure-times"></ul>
+      </div>
+    </section>
     <script src="./index.js"></script>
   </body>
 </html>
