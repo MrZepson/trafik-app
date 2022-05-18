@@ -22,7 +22,7 @@ function getLocation() {
 }
 
 // Fetching for nearby bus-stops
-const getLongLat = async (long, lat) => {
+async function getLongLat(long, lat) {
   const res = await fetch(
     `https://api.resrobot.se/v2.1/location.nearbystops?format=json&accessId=${API_KEY}&originCoordLat=${lat}&originCoordLong=${long}`
   );
@@ -37,7 +37,7 @@ const getLongLat = async (long, lat) => {
 
   // Calls to print out the locations
   printLocations(locationList);
-};
+}
 
 function printLocations(locationList) {
   locationlistElem.innerHTML = locationList
@@ -88,6 +88,19 @@ function closeModal(e) {
     cardOverlay.style.display = "none";
   }
 }
+
+// Register Service Worker
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => console.log("Registered service worker!"))
+      .catch(() => console.log("Could not register service worker!"));
+  }
+}
+
+// Calling to register Service Worker
+registerServiceWorker();
 
 // Makes sure website is fully loaded before any events happens
 window.addEventListener("load", () => {
